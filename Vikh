@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - ABCD EFG</title>
+	<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin:auto;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+			border:1px solid gray;
+            
+        }
+        .title {
+            font-weight: bold;
+            text-align: left;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+
+        <table>
+            <tr>
+				<td colspan="2" rowspan="2"><h1>ABCD EFG</h1></td>
+				<td>MOBILE</td>
+				<td><strong>91-7567489585</strong></td>
+            </tr>
+			<tr>
+				<td>Home Landline</td>
+				<td><strong>0820-2748409</strong></td>
+			</tr>
+            <tr>
+				<td>Citizenship: INDIAN</td>
+				<td>Date of Birth: <strong>Aug 15, 1987</strong></td>
+				<td>EMAIL</td>
+				<td><a href="absd.efg@gmail.com">absd.efg@gmail.com</a></td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="title">Present Address</td>
+				<td>Room No. 103, 10th Block, MIT Hostels, Manipal 576 104, Karnataka State</td>
+            </tr>
+            <tr>
+                <td class="title">Permanent Address</td>
+				<td>Flat No: 301, 3rd floor, Royal Apartments, M. G. Road, Bangalore 560 001, Karnataka State</td>
+            </tr>
+        </table><br>
+		
+		<table>
+			<tr>
+				<td class="title">Objective</td>
+				<td>To contribute my skills sets to the organization to achieve the goals and targets, that enhances my professional and personal growth</td>
+
+			</tr>
+		</table><br>
+
+        <table>
+            <tr>
+                <td class="title" colspan="5">Educational Qualifications</td>
+            </tr>
+            <tr>
+                <th>Grade</th>
+                <th>School / College</th>
+                <th>Board / University</th>
+                <th>Duration</th>
+                <th>% / CGPA</th>
+            </tr>
+            <tr>
+                <td>10th</td>
+                <td>ABC School, Bangalore</td>
+                <td>KSSEB Bangalore, Karnataka</td>
+                <td>2004 â€“ 2005</td>
+                <td>93.20</td>
+            </tr>
+            <tr>
+                <td>12th</td>
+                <td>MGM Udupi</td>
+                <td>KSSEB Bangalore, Karnataka</td>
+                <td>2005 â€“ 2007</td>
+                <td>95.75</td>
+            </tr>
+            <tr>
+                <td>B.Tech</td>
+                <td>Manipal Institute of Technology</td>
+                <td>Manipal University, Manipal</td>
+                <td>2007 â€“ 2011</td>
+                <td>7.3</td>
+            </tr>
+            <tr>
+                <td>M.Tech</td>
+                <td>Manipal Institute of Technology</td>
+                <td>Manipal University, Manipal</td>
+                <td>2011 - 2013</td>
+                <td>6.9 (Sem 1)</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+				<td><strong>M.Tech Stream</strong></td>
+				<td><strong>Power Electronic Systems & Control (PESC)</strong></td>
+				<td><strong>Department</strong></td>
+				<td><strong>Electrical & Electronics (E & E) Engineering</strong></td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td>Elective Subjects</td>
+				<td>
+					<ul>
+						<li>UG: Soft Computing, Design of Electrical Machines</li>
+						<li>PG: Intelligent Control Systems, Distributed Energy Resources</li>
+					</ul>
+				</li>
+            </tr>
+        </table><br>
+
+		<table>
+            <tr>
+                <td>Areas of Interest</td>
+				<td>Electrical Machinery, Power Electronics, Operating Systems</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="title" colspan="2">Skill Sets</td>
+            </tr>
+            <tr>
+                <td>Technical Softwares</td>
+				<td>Pspice, Matlab, VHDL</td>
+            </tr>
+            <tr>
+				<td>General Softwares</td>
+				<td>Word, Excel, SQL</td>
+            </tr>
+            <tr>
+				<td>Languages Known</td>
+				<td>Kannada (native), Hindi, English, German</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="title" colspan="2">Technical Activities</td>
+            </tr>
+            <tr>
+                <td>Industrial Training</td>
+				<td>
+					<ul>
+						<li>3 weeks in power plant operations at National Thermal Power Corporation (NTPC), Raichur, Karnataka, Dec 2009</li>
+						<li>2 weeks in maintenance operations at Mangalore Refinery and Petrochemicals Ltd, Mangalore, Karnataka, Jun 2010</li>
+					</ul>
+				</td>
+            </tr>
+            <tr>
+                <td>Internship</td>
+				<td>
+					<ul>
+						<li>6 weeks summer internship in Dept of Electrical & Electronics Engg, IIT Kanpur under the mentorship of Dr. ABC, Professor, Dept of Electrical & Electronics Engg, IIT Kanpur, Jun 2011</li>
+					</ul>
+				</td>
+			</tr>
+            <tr>
+                <td>Projects</td>
+				<td>
+					<ul>
+						<li>Part of 2 member team working on â€œSpeed Control of Induction Motorâ€ under the mentorship of Dr. EFG, Professor, Dept of Electrical & Electronics, MIT Manipal</li>
+						<li>Part of 10 member team working on â€œFormula Team Manipalâ€ under the mentorship of Dr. JKL, Professor, Dept of Mechanical & Manufacturing Engg, MIT Manipal</li>
+						<li>8th Semester project titled â€œInduction motor speed controlâ€ under the guidance of Dr. MNO, Professor, Dept of Electrical & Electronics Engg, MIT Manipal</li>
+					</ul>
+				</td>
+			</tr>
+            <tr>
+                <td>Paper Presentations</td>
+				<td>
+					<ul>
+						<li>Presented a paper â€œSpeed control of Induction Motorâ€ in Students Paper Contest, AECT 2012, Dept of Electrical & Electronics Engg, MIT Manipal, Feb 2012</li>
+					</ul>
+				</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="title">Additional Activities</td>
+            </tr>
+            <tr>
+                <td>
+					<ul>
+						<li>Category Head for â€œElectromaniaâ€, Techtatva, 2010</li>
+						<li>Member of MIT Swimming Team</li>
+					</ul>
+				</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="title">Achievements</td>
+            </tr>
+            <tr>
+				
+                <td>
+					<ul>
+						<li>Presently in top 5 of Dept of Electrical & Electronics, MIT Manipal</li>
+						<li>Awarded â€œBest Outgoing Studentâ€ by ABC School, Bangalore, 2007</li>
+					</ul>
+				</td>
+            </tr>
+        </table><br>
+
+        <table>
+            <tr>
+                <td class="title">References</td>
+            </tr>
+            <tr>
+                <td>
+					<ul>
+						<li>Dr. LMN, Professor and Head, Dept of Electrical & Electronics Engg, MIT Manipal</li>
+						<li>Dr. PQR, Professor, Dept of Electrical & Electronics, MIT Manipal</li>
+					</ul>
+				</td>
+            </tr>
+        </table><br>
+
+        <table>
+			<tr>
+				<td>
+					<p>The above information provided by me is true and I have all the relevant documents to authenticate the same.</p>
+					<p><strong>ABCD EFG</strong></p>
+				</td>
+			</tr>
+		</table>
+    </div>
+</body>
+</html>
