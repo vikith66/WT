@@ -1,0 +1,405 @@
+SQL> Insert Into Dept1 Values('D1','Marketing','CHN',500000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values('D2','Research','MNG',300000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values('D3','IT','BNG',400000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values('D4','HR','BGG',200000);
+Insert Into Dept1 Values('D4','HR','BGG',200000)
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.VALID_LOC_CONS) violated 
+
+
+SQL> Insert Into Dept1 Values('D4','HR','BNG',200000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values('D5','Accounts','BNG',500000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values(NULL,'Corporate','HYD',700000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values(D1,'Marketing','CHN',600000);
+Insert Into Dept1 Values(D1,'Marketing','CHN',600000)
+                         *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+SQL> Insert Into Dept1 Values('D1','Marketing','CHN',600000);
+Insert Into Dept1 Values('D1','Marketing','CHN',600000)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (MCA087.DNO_UNQ_CONS) violated 
+
+
+SQL> Insert Into Dept1 Values('D6','Production','CHN',600000);
+
+1 row created.
+
+SQL> Insert Into Dept1 Values('D7','Sales','BNG',800000);
+
+1 row created.
+
+SQL> Insert Into Proj(Dno,Prj_No,Prj_Credits,Proj_Fund)Values('D1','P1',4,400000);
+Insert Into Proj(Dno,Prj_No,Prj_Credits,Proj_Fund)Values('D1','P1',4,400000)
+                            *
+ERROR at line 1:
+ORA-00904: "PRJ_CREDITS": invalid identifier 
+
+
+SQL> Insert Into Proj Values('D1','P1''Mobile',4,to_date(16-08-2024,DD-MM-YYYY),to_date(16-10-2024,DD-MM-YYYY),400000);
+Insert Into Proj Values('D1','P1''Mobile',4,to_date(16-08-2024,DD-MM-YYYY),to_date(16-10-2024,DD-MM-YYYY),400000)
+            *
+ERROR at line 1:
+ORA-00947: not enough values 
+
+
+SQL> Insert Into Proj Values('D1','P1','Mobile',4,to_date(16-08-2024,DD-MM-YYYY),to_date(16-10-2024,DD-MM-YYYY),400000);
+Insert Into Proj Values('D1','P1','Mobile',4,to_date(16-08-2024,DD-MM-YYYY),to_date(16-10-2024,DD-MM-YYYY),400000)
+                                                                                                     *
+ERROR at line 1:
+ORA-00984: column not allowed here 
+
+
+SQL> Insert Into Proj Values('D1','P1','Mobile',4,to_date('16-08-2024','DD-MM-YYYY'),to_date('16-10-2024','DD-MM-YYYY'),400000);
+
+1 row created.
+
+SQL> Insert Into Proj Values('D2','P1','MindBurst',2,to_date('15-08-2024','DD-MM-YYYY'),to_date('15-10-2024','DD-MM-YYYY'),200000);
+
+1 row created.
+
+SQL> Insert Into Proj Values('D3','P2','Amplify',3,to_date('15-08-2024','DD-MM-YYYY'),to_date('15-01-2025','DD-MM-YYYY'),300000);
+
+1 row created.
+
+SQL> Insert Into Proj Values('D1','P3','Infinity',3,to_date('25-08-2024','DD-MM-YYYY'),to_date('15-03-2025','DD-MM-YYYY'),500000);
+
+1 row created.
+
+SQL> Insert Into Proj Values('D4','P2','Phoenix',3,to_date('25-05-2024','DD-MM-YYYY'),to_date('15-02-2025','DD-MM-YYYY'),700000);
+
+1 row created.
+
+SQL> Insert Into Proj Values('D4','P3','Neon',3,to_date('25-05-2023','DD-MM-YYYY'),to_date('15-02-2024','DD-MM-YYYY'),200000);
+
+1 row created.
+
+SQL> Insert Into Proj Values('D1','P3','Neonex',3,to_date('16-08-2024','DD-MM-YYYY'),to_date('15-12-2024','DD-MM-YYYY'),200000);
+Insert Into Proj Values('D1','P3','Neonex',3,to_date('16-08-2024','DD-MM-YYYY'),to_date('15-12-2024','DD-MM-YYYY'),200000)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (MCA087.PK_PROJ_DNO_PRJ_NO) violated 
+
+
+SQL> Insert Into Proj Values('D1','P2','Neonex',3,to_date('16-08-2024','DD-MM-YYYY'),to_date('15-12-2024','DD-MM-YYYY'),200000);
+
+1 row created.
+
+SQL> select * from Emp1;
+
+no rows selected
+
+SQL> select * from proj;
+
+DNO PRJ_N PRJ_NAME   PRJ_CREDIT START_DAT END_DATE   PROJ_FUND                  
+--- ----- ---------- ---------- --------- --------- ----------                  
+D1  P1    Mobile              4 16-AUG-24 16-OCT-24     400000                  
+D2  P1    MindBurst           2 15-AUG-24 15-OCT-24     200000                  
+D3  P2    Amplify             3 15-AUG-24 15-JAN-25     300000                  
+D1  P3    Infinity            3 25-AUG-24 15-MAR-25     500000                  
+D4  P2    Phoenix             3 25-MAY-24 15-FEB-25     700000                  
+D4  P3    Neon                3 25-MAY-23 15-FEB-24     200000                  
+D1  P2    Neonex              3 16-AUG-24 15-DEC-24     200000                  
+
+7 rows selected.
+
+SQL> select * from dept1;
+
+DNO DNAME      LOCATION  DEPT_BUDGET                                            
+--- ---------- --------- -----------                                            
+D1  Marketing  CHN            500000                                            
+D2  Research   MNG            300000                                            
+D3  IT         BNG            400000                                            
+D4  HR         BNG            200000                                            
+D5  Accounts   BNG            500000                                            
+    Corporate  HYD            700000                                            
+D6  Production CHN            600000                                            
+D7  Sales      BNG            800000                                            
+
+8 rows selected.
+
+SQL> Insert Into Task Values(1,'Design Phase','P1','D1',to_date('10-01-2024','DD-MM-YYYY'),to_date('16-08-2024','DD-MM-YYYY'),'Completed');
+
+1 row created.
+
+SQL> Insert Into Task Values(2,'Development Phase','P1','D2',to_date('10-01-2024','DD-MM-YYYY'),to_date('16-12-2024','DD-MM-YYYY'),'In Progress');
+
+1 row created.
+
+SQL> Insert Into Task Values(1,'Design Phase','P2','D3',to_date('10-10-2024','DD-MM-YYYY'),to_date('16-12-2024','DD-MM-YYYY'),'Not Started');
+
+1 row created.
+
+SQL> Insert Into Task Values(2,'Development Phase','P3','D1',to_date('10-08-2024','DD-MM-YYYY'),to_date('20-12-2024','DD-MM-YYYY'),'In Progress');
+
+1 row created.
+
+SQL> Insert Into Task Values(3,'Testing Phase','P3','D1',to_date('10-08-2024','DD-MM-YYYY'),to_date('20-12-2024','DD-MM-YYYY'),'In Progress');
+
+1 row created.
+
+SQL> Insert Into Task Values(3,'Testing Phase','P1','D2',to_date('10-01-2024','DD-MM-YYYY'),to_date('16-12-2024','DD-MM-YYYY'),'In Progress');
+
+1 row created.
+
+SQL> Insert Into Task Values(2,'Development Phase','P1','D1',to_date('10-01-2024','DD-MM-YYYY'),to_date('16-08-2024','DD-MM-YYYY'),'Completed');
+
+1 row created.
+
+SQL> coommit;
+SP2-0042: unknown command "coommit" - rest of line ignored.
+SQL> commit;
+
+Commit complete.
+
+SQL> select *from dept1;
+
+DNO DNAME      LOCATION  DEPT_BUDGET                                            
+--- ---------- --------- -----------                                            
+D1  Marketing  CHN            500000                                            
+D2  Research   MNG            300000                                            
+D3  IT         BNG            400000                                            
+D4  HR         BNG            200000                                            
+D5  Accounts   BNG            500000                                            
+    Corporate  HYD            700000                                            
+D6  Production CHN            600000                                            
+D7  Sales      BNG            800000                                            
+
+8 rows selected.
+
+SQL> select *from emp1;
+
+no rows selected
+
+SQL> select *from proj;
+
+DNO PRJ_N PRJ_NAME   PRJ_CREDIT START_DAT END_DATE   PROJ_FUND                  
+--- ----- ---------- ---------- --------- --------- ----------                  
+D1  P1    Mobile              4 16-AUG-24 16-OCT-24     400000                  
+D2  P1    MindBurst           2 15-AUG-24 15-OCT-24     200000                  
+D3  P2    Amplify             3 15-AUG-24 15-JAN-25     300000                  
+D1  P3    Infinity            3 25-AUG-24 15-MAR-25     500000                  
+D4  P2    Phoenix             3 25-MAY-24 15-FEB-25     700000                  
+D4  P3    Neon                3 25-MAY-23 15-FEB-24     200000                  
+D1  P2    Neonex              3 16-AUG-24 15-DEC-24     200000                  
+
+7 rows selected.
+
+SQL> Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1','P1',to_date('02-10-2001','DD-MM-YYYY');
+Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1','P1',to_date('02-10-2001','DD-MM-YYYY')
+                                                                                                                                        *
+ERROR at line 1:
+ORA-00917: missing comma 
+
+
+SQL> Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1','P1',to_date('02-10-2001','DD-MM-YYYY');
+Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1','P1',to_date('02-10-2001','DD-MM-YYYY')
+                                                                                                                                        *
+ERROR at line 1:
+ORA-00917: missing comma 
+
+
+SQL> Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1','P1',to_date('02-10-2001','DD-MM-YYYY'));
+Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1','P1',to_date('02-10-2001','DD-MM-YYYY'))
+                                                                                                  *
+ERROR at line 1:
+ORA-01858: a non-numeric character was found where a numeric was expected 
+
+
+SQL> Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(100,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.VALID_EMP_NO) violated 
+
+
+SQL> Insert Into Emp1 Values(101,'Ravi','MGR',NULL,to_date('10-10-1985','DD-MM-YYYY'),32000,10000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(102,'Raviraj','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),24000,11000,'D1',to_date('12-11-2000','DD-MM-YYYY'),'P3');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(111,'Raghu','GM',NULL,to_date('10-12-1974','DD-MM-YYYY'),45000,15000,null,to_date('03-12-1985','DD-MM-YYYY'),null);
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(150,'Ramu','CEO',NULL,to_date('10-12-1970','DD-MM-YYYY'),60000,30000,null,to_date('03-12-1990','DD-MM-YYYY'),null);
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(150,'Ramu','CEO',NULL,to_date('10-12-1970','DD-MM-YYYY'),60000,30000,null,to_date('03-12-1990','DD-MM-YYYY'),null);
+Insert Into Emp1 Values(150,'Ramu','CEO',NULL,to_date('10-12-1970','DD-MM-YYYY'),60000,30000,null,to_date('03-12-1990','DD-MM-YYYY'),null)
+*
+ERROR at line 1:
+ORA-00001: unique constraint (MCA087.SYS_C0093351) violated 
+
+
+SQL> Insert Into Emp1 Values(103,'Raju','A.Clrk',NULL,to_date('10-12-1980','DD-MM-YYYY'),20000,7000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(103,'Raju','A.Clrk',NULL,to_date('10-12-1980','DD-MM-YYYY'),20000,7000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.SAL_20KMORE_CONS) violated 
+
+
+SQL> Insert Into Emp1 Values(103,'Raju','A.Clrk',NULL,to_date('10-12-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(103,'Raju','A.Clrk',NULL,to_date('10-12-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.JOB_CHK_CONS) violated 
+
+
+SQL> Insert Into Emp1 Values(103,'Raju','A_MGR',NULL,to_date('10-12-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P1');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(103,'Raju','CLRK',NULL,to_date('02-10-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2002','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(103,'Raju','CLRK',NULL,to_date('02-10-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2002','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (MCA087.SYS_C0093351) violated 
+
+
+SQL> Insert Into Emp1 Values(120,'Raju','CLRK',NULL,to_date('02-10-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2002','DD-MM-YYYY'),'P1');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(125,'Manu','A_MGR',NULL,to_date('10-12-1980','DD-MM-YYYY'),23000,9000,'D4',to_date('02-10-2002','DD-MM-YYYY'),'P2');
+
+1 row created.
+
+SQL> Delete *from emp1 where empno=120;
+Delete *from emp1 where empno=120
+       *
+ERROR at line 1:
+ORA-00903: invalid table name 
+
+
+SQL> Delete from emp1 where empno=120;
+
+1 row deleted.
+
+SQL> Insert Into Emp1 Values(120,'Raju','CLRK',NULL,to_date('02-10-1980','DD-MM-YYYY'),21000,7000,'D1',to_date('02-10-2002','DD-MM-YYYY'),'P3');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(104,'Manoj','CLERK',NULL,to_date('02-10-1980','DD-MM-YYYY'),23000,9000,'D2',to_date('02-10-2005','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(104,'Manoj','CLERK',NULL,to_date('02-10-1980','DD-MM-YYYY'),23000,9000,'D2',to_date('02-10-2005','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.JOB_CHK_CONS) violated 
+
+
+SQL> Insert Into Emp1 Values(104,'Manoj','CLRK',NULL,to_date('02-10-1980','DD-MM-YYYY'),23000,9000,'D2',to_date('02-10-2005','DD-MM-YYYY'),'P1');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(106,'Manohar','MGR',NULL,to_date('02-10-1986','DD-MM-YYYY'),33000,12000,'D2',to_date('02-10-1985','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(106,'Manohar','MGR',NULL,to_date('02-10-1986','DD-MM-YYYY'),33000,12000,'D2',to_date('02-10-1985','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.DB_LESS_DBJOIN_CONS) violated 
+
+
+SQL> Insert Into Emp1 Values(106,'Manohar','MGR',NULL,to_date('02-10-1986','DD-MM-YYYY'),33000,12000,'D2',to_date('02-10-2005','DD-MM-YYYY'),'P1');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(123,'Mahesh','CLRK',NULL,to_date('10-12-1974','DD-MM-YYYY'),25000,10000,'D3',to_date('02-10-2002','DD-MM-YYYY'),'P2');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(108,'Mayank','CLRK',NULL,to_date('10-12-1970','DD-MM-YYYY'),25000,10000,'D9',to_date('02-10-1985','DD-MM-YYYY'),'P2');
+Insert Into Emp1 Values(108,'Mayank','CLRK',NULL,to_date('10-12-1970','DD-MM-YYYY'),25000,10000,'D9',to_date('02-10-1985','DD-MM-YYYY'),'P2')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (MCA087.DEPTNO_FK_DEPT_CONS) violated - parent 
+key not found 
+
+
+SQL> Insert Into Emp1 Values(108,'Mayank','CLRK',NULL,to_date('10-12-1970','DD-MM-YYYY'),25000,10000,'D5',to_date('02-10-1985','DD-MM-YYYY'),'P2');
+Insert Into Emp1 Values(108,'Mayank','CLRK',NULL,to_date('10-12-1970','DD-MM-YYYY'),25000,10000,'D5',to_date('02-10-1985','DD-MM-YYYY'),'P2')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (MCA087.PK_CONVERT) violated - parent key not 
+found 
+
+
+SQL> Insert Into Emp1 Values(108,'Mayank','CLRK',NULL,to_date('10-12-1970','DD-MM-YYYY'),25000,10000,'D3',to_date('02-10-1985','DD-MM-YYYY'),'P2');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(103,'Malhan','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),25000,10000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P3');
+Insert Into Emp1 Values(103,'Malhan','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),25000,10000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P3')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (MCA087.SYS_C0093351) violated 
+
+
+SQL> Insert Into Emp1 Values(130,'Malhan','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),25000,10000,'D1',to_date('02-10-2001','DD-MM-YYYY'),'P3');
+
+1 row created.
+
+SQL> Insert Into Emp1 Values(Null,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),18000,5000,'D5',to_date('10-12-1980','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(Null,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),18000,5000,'D5',to_date('10-12-1980','DD-MM-YYYY'),'P1')
+                        *
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("MCA087"."EMP1"."EMPNO") 
+
+
+SQL> Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),18000,5000,'D5',to_date('10-12-1980','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),18000,5000,'D5',to_date('10-12-1980','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.DB_LESS_DBJOIN_CONS) violated 
+
+
+SQL> Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),18000,5000,'D5',to_date('10-12-2000','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),18000,5000,'D5',to_date('10-12-2000','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02290: check constraint (MCA087.SAL_20KMORE_CONS) violated 
+
+
+SQL> Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),21000,5000,'D5',to_date('10-12-2000','DD-MM-YYYY'),'P1');
+Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),21000,5000,'D5',to_date('10-12-2000','DD-MM-YYYY'),'P1')
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (MCA087.PK_CONVERT) violated - parent key not 
+found 
+
+SQL> Insert Into Emp1 Values(131,'Maanya','CLRK',NULL,to_date('10-12-1980','DD-MM-YYYY'),21000,5000,'D5',to_date('10-12-2000','DD-MM-YYYY'),'P1');
+
+1 row created.
+
+
+
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off;
