@@ -1,0 +1,176 @@
+<!Doctype html>
+
+<head>
+    <title>Passport Registration</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <style>
+        form {
+            margin: 30px;
+            padding: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        p,
+        li {
+            font-size: 14px;
+        }
+
+        .right {
+            float: right;
+            font-size: 9px;
+        }
+
+        .div2 {
+            float: left;
+
+        }
+
+        #i3 {
+            width: 200px;
+            height: 30px;
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+        .wrap {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine;
+            height: 180vh;
+            border: 5px solid black;
+            width: 60%;
+        }
+        .wrapbutton{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <form method="post" action="" enctype="multipart/form-data">
+            <h2 class="center">User Registration</h2>
+            <br>
+            <p class="right">Fields marked with asterisk (*) are mandatory</p>
+            <p><b>Important Information:</b> Passport application can be processed at any</p>
+            <p>PSK/POPSK/PSLK WITHIN INDIA irrespective of your residential address.</p>
+            <ul>
+                <li><a href="https://portal1.passportindia.gov.in/AppOnlineProject/online/apptAvailStatus">Click
+                        here</a> to
+                    check the appointment availability at all PSK/POPSK/PSLK.</li>
+                <li><a href="https://portal2.passportindia.gov.in/AppOnlineProject/pdf/CIR_0186917_Y.pdf"> Click
+                        here</a> to
+                    know more about Apply Anywhere in India scheme for Passport Services.</li>
+            </ul>
+            <br><br>
+            <div class="div1">
+                <p class="right">Select the 'CPV Delhi' option to apply for Diplomatic/Official <br>
+                    passport at Consular, Passport and Visa (CPV) division, Delhi.<br><br><br>
+                    Tibetan Refugees applying for Identity Certificate must register <br>
+                    with 'Delhi' Passport Office.s<br><br>
+                    <b>First Name + Middle Name</b><br>
+                    Initials and honorifics (e.g. Dr.,Col.,etc.) are not allowed.
+                </p>
+
+            </div>
+
+            <div class="div2">
+
+                <label for="office">Register to apply at * </label>
+                <br>
+                <br>
+                <br>
+                <label for="sel1">Passport Office * </label>
+                <br>
+                <br>
+                <label for="fname">Given Name (Max 45 Characters) * </label>
+                <br>
+                <br>
+                <label for="sname">SurnameName (Max 45 Characters) </label>
+                <br>
+                <br>
+                <label for="dob">Date of Birth (DD/MM/YYYY)* </label>
+                <br>
+                <br>
+                <label for="email">E-mail Id (Max 35 Characters)* </label>
+                <br>
+                <br>
+                <label for="lids">Do you want your Login Id<br>to be same as E-mail Id? </label>
+                <br>
+                <br>
+                <label for="lid">Login Id* </label>
+                <br>
+                <br>
+                <label for="password">Password* </label>
+                <br>
+                <br>
+                <label for="cpassword">Confirm Password* </label>
+                <br>
+                <br>
+                <label for="hq">Hint Question* </label>
+                <br>
+                <br>
+                <label for="hp">Hint Answer* </label>
+                <br>
+                <br>
+                <br>
+                <br>
+                <label for="captca">Enter Characters Displayed* </label>
+            </div>
+
+            <div class="div3">
+                <input type="radio" name="btn">CPV Delhi<br>
+                <input type="radio" name="btn" checked>Passport Office<br>
+                <br><select name="sel1" required>
+                    <option value="Select">***Select***</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Bengaluru">Bengaluru</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Mysore">Mysore</option>
+                    <option value="Pune">Pune</option>
+                </select>
+                <br><br><input type="text" name="fname" required>
+                <br><br><input type="text" name="sname" required>
+                <br><br><input type="date" name="dob">
+                <br><br><input type="email" name="email" required>
+                <br><br><input type="radio" name="lids">Yes
+                <input type="radio" name="lids" checked>No
+                <br><br><input type="text" name="lid" required>
+                <a href="#">Check Availability</a>
+                <br><br><input type="password" name="" id="" required>
+                <a href="#">Password Policy</a>
+                <br><br><input type="cpassword" name="confirm_pass" required>
+                <br><br><select name="hq" required>
+                    <option value="birth_palce">Birth City</option>
+                    <option value="color">Favourite Colour</option>
+                    <option value="cricketer">Favourite Cricketer</option>
+                </select>
+                <br><br><input type="text" name="answer" required>
+               
+                    <br><br><img
+                        src="https://portal2.passportindia.gov.in/AppOnlineProject/PspTest01Captcha09S.awsti?x=1677598969135"
+                        alt="Captcha">
+                    <br><br> 
+                <div class="wrapbutton">
+                    <input type="text" name="" id="i3" required placeholder="enter the captcha">
+                    <br><input type="submit" name="submit" value="Submit">
+                    <input type="reset" name="clear" value="Clear">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

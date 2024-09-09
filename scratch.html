@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passport Login</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .container {
+            width: 65%;
+            margin: 0 auto;
+            padding: 20px 80px;
+            border-radius: 35px;
+            background-color: antiquewhite;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .col-left {
+            width: 100%;
+        }
+
+        .fontsize {
+            font-size: 13px;
+        }
+
+        .col-right {
+            width: 100%;
+        }
+
+        .right-text {
+            width: 100%;
+            font-size: 10px;
+            margin-left: -150px;
+        }
+
+        .right-text a {
+            color: blue;
+            font-size: 20px;
+        }
+
+        .info-box {
+            background-color: #f2f2f2;
+            padding: 40px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border-radius: 20px;
+        }
+
+        .info-box p {
+            margin: 0;
+        }
+
+        .radio-group {
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .radio-input {
+            margin-right: 5px;
+        }
+
+        .select-box {
+            width: 50%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="text"], input[type="date"],input[type="password"]{
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4CAF50;
+            padding: 10px 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+        input[type="submit"]:hover,input[type="reset"]:hover{
+            background-color: #00b3ff;
+        }
+        .botton-align {
+            text-align: center;
+        }
+
+        .info-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .info-container .info-box {
+            width: 60%;
+        }
+
+        .info-container .info-text {
+            width: 35%;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="" enctype="multipart/form-data">
+        <div class="container">
+            <h1>User Registration</h1>
+            <div class="info-container">
+                <div class="info-box">
+                    <p>Important Information: Passport application can be processed at any PSK/ POPSK/PSLK WITHIN INDIA
+                        irrespective of your residential address.</p>
+                    <ul>
+                        <li>Click here to check the appointment availability at all PSK/POPSK/PSLK.</li>
+                        <li>Click here to know more about Apply Anywhere in India scheme for Passport Services.</li>
+                    </ul>
+                </div>
+                <div class="info-text">
+                    <p>Fields marked with asterisk (*) are mandatory</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-left">
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="register">Register to apply at* </label>
+                        </div>
+                        <div class="col-right">
+                            <div class="radio-group">
+                                <input type="radio" name="apply_at" id="cpv_delhi" class="radio-input">
+                                <label for="cpv_delhi">CPV Delhi</label>
+                                <br>
+                                <input type="radio" name="apply_at" id="passport_office" class="radio-input">
+                                <label for="passport_office">Passport Office</label>
+                            </div>
+                        </div>
+                        <div class="right-text">
+                            <p class="fontsize">Select the 'CPV Delhi' option to apply for
+                                Diplomatic/Official passport at Consular,
+                                Passport and Visa (CPV) division, Delhi.</p>
+                            <p class="fontsize">Tibetan Refugees applying for Identity
+                                Certificate must register with 'Delhi'
+                                Passport Office.</p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="passport">Passport Office *<p>
+                                    (As per Present Residential Address)</p></label>
+                        </div>
+                        <div class="col-right">
+                            <select class="select-box" id="passport">
+                                <option value="">--- Select ---</option>
+                                <option value="Delhi">Delhi </option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Lucknow">Lucknow</option>
+                                <option value="Patna">Patna</option>
+                            </select>
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="firstname">Given Name (Max 45 Characters)*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="text" id="firstname" placeholder="First Name ">
+                        </div>
+                        <div class="right-text">
+                            <p class="fontsize"><strong>First Name + Middle Name</strong>
+                                Initials and honorifics (e.g. Dr.,Col.,etc.)
+                                are not allowed. </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="surname">Surname (Max 45 Characters)*</p>
+                        </div>
+                        <div class="col-right">
+                            <input type="text" id="surname" placeholder="Surname Name ">
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="dob">Date of Birth (DD/MM/YYYY)*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="date" id="dob" name="dob">
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="email">E-mail Id (Max 35 Characters)*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="text" id="email" name="email" placeholder="Enter Email">
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <p>
+                                Do you want your Login Id<br>
+                                to be same as E-mail Id?</p>
+                        </div>
+                        <div class="col-right">
+                            <input type="radio" id="yesemail" name="email" value="Yes">
+                            <label for="yesemail">Yes</label>
+                            <input type="radio" id="noemail" name="email" value="No">
+                            <label for="noemail">No</label>
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="loginid">Login Id*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="text" id="loginid" name="loginid" placeholder="Enter Login ID">
+                        </div>
+                        <div class="right-text">
+                            <a href="">Check Availability</a><br><br>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="password">Password*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="password" id="password" name="password" placeholder="Enter Password">
+                        </div>
+                        <div class="right-text"><a href="">Password Policy</a></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="confirm">Confirm Password*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="password" id="confirm" name="confirm" placeholder="Confirm Password">
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="hintques">Hint Question*</label>
+                        </div>
+                        <div class="col-right">
+                            <select class="select-box">
+                                <option value="">--- Select a question ---</option>
+                                <option value="fav_color">What is your favorite color?</option>
+                                <option value="fav_food">What is your favorite food?</option>
+                                <option value="fav_movie">What is your favorite movie?</option>
+                                <option value="dream_job">What is your dream job?</option>
+                                <option value="fav_hobby">What is your favorite hobby?</option>
+                                <option value="fav_sport">What is your favorite sport?</option>
+                            </select>
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="hintans">Hint Answer*</label>
+                        </div>
+                        <div class="col-right">
+                            <input type="text" id="hintans" name="hintans" placeholder="Enter Hint Answer">
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-left">
+                            <label for="captcha">Enter Characters Displayed *</label>
+                        </div>
+                        <div class="col-right">
+                            <img src="https://portal2.passportindia.gov.in/AppOnlineProject/PspTest01Captcha09S.awsti?x=1677598969135"
+                                alt="Captcha"><br>
+                            <input type="text" id="captcha" name="captcha" placeholder="Enter Captcha">
+                        </div>
+                        <div class="right-text"></div>
+                    </div>
+                    <div class="botton-align">
+                        <input type="submit" name="submit" id="submit" value="Submit">
+                        <input type="reset" name="clear" id="clear" value="Clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>
