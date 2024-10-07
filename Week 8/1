@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Example</title>
+    <script>
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + d.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        window.onload = function() {
+            const userName = getCookie("username");
+            const lastAccess = getCookie("lastAccess");
+            const currentTime = new Date().toLocaleTimeString(); // Get current time
+
+            if (userName) {
+                document.getElementById("welcomeMessage").innerText = `Welcome back, ${userName}!`;
+                document.getElementById("lastAccess").innerText = `Your last access was at: ${lastAccess}`;
+            } else {
+                const name = prompt("Please enter your name:");
+                if (name) {
+                    setCookie("username", name, 30);
+                    setCookie("lastAccess", currentTime, 30);
+                    document.getElementById("welcomeMessage").innerText = `Welcome, ${name}!`;
+                    document.getElementById("lastAccess").innerText = `Your last access was at: ${currentTime}`;
+                }
+            }
+
+            if (userName) {
+                setCookie("lastAccess", currentTime, 30);
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1 id="welcomeMessage"></h1>
+    <p id="lastAccess"></p>
+</body>
+</html>
