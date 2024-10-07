@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select a Website</h1>
+    <select id="websiteSelect" onchange="websites()">
+        <option value="">-- Select a website --</option>
+        <option value="index.html">Example Website 1</option>
+        <option value="program2.html">Example Website 2</option>
+        <option value="program2window.html">Example Website 3</option>
+    </select>
+
+    <script>
+        function websites() {
+            const selectedValue = document.getElementById('websiteSelect').value;
+            if (selectedValue) {
+                window.location.href = selectedValue; 
+            }
+        }
+    </script>
+</body>
+</html>
+
