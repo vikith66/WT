@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Boxes</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            width: 100%;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        button{
+            padding: 0px 70px;
+            background: linear-gradient(to right,rgb(67, 183, 250),rgba(194, 158, 223, 0.281));
+            border: 1px solid rgb(6, 22, 29);
+            border-radius: 20px;
+        }
+        button p{
+            color: rgb(32, 17, 17);
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="output"></h1>
+    <div class="container">
+        <button onclick="showalert()"><p>Alert</p></button>
+        <button onclick="showconfirm()"><p>Confirm</p></button>
+        <button onclick="showprompt()"><p>Prompt</p></button>
+    </div>
+    <script>
+        function showalert() {
+            alert("First Program Of JavaScript");
+        }
+        function showconfirm() {
+            const s = confirm("Are You A Human Being");
+            if(s){
+                document.getElementById("output").textContent = "You Clicked Yes";
+            } else {
+                document.getElementById("output").textContent = "You Clicked No";
+            }
+        }
+        function showprompt(){
+            const pro = prompt("Enter Your Name");
+            document.getElementById("output").textContent = "Your Name Is " + pro;
+        }
+    </script>
+</body>
+
+</html>
