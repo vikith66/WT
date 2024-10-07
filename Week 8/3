@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freehand Drawing App</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        canvas {
+            border: 1px solid black;
+            cursor: crosshair;
+        }
+
+        #coordinates {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Freehand Drawing App</h1>
+    <canvas id="drawingCanvas" width="800" height="600"></canvas>
+    <div id="coordinates">Mouse Coordinates: (0, 0)</div>
+
+    <script>
+        const canvas = document.getElementById('drawingCanvas');
+        const ctx = canvas.getContext('2d');
+        const coordinatesDisplay = document.getElementById('coordinates');
+
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDrawing = true;
+            [lastX, lastY] = getMousePosition(e);
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            isDrawing = false;
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            const [x, y] = getMousePosition(e);
+            if (isDrawing) {
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                [lastX, lastY] = [x, y];
+            }
+            updateCoordinates(x, y);
+        });
+
+        function getMousePosition(event) {
+            const rect = canvas.getBoundingClientRect();
+            return [event.clientX - rect.left, event.clientY - rect.top];
+        }
+
+        function updateCoordinates(x, y) {
+            coordinatesDisplay.textContent = `Mouse Coordinates: (${x}, ${y})`;
+        }
+    </script>
+</body>
+
+</html>
