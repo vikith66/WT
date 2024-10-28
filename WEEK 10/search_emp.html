@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Search</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        #result {
+            margin: 20px auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Employee Details</h1>
+    <input type="text" id="search" placeholder="Enter employeea name..." onkeyup="searchEmployees()">
+    <div id="result"></div>
+
+    <script>
+        function searchEmployees() {
+            const query = document.getElementById('search').value;
+
+            if (query.length > 0) {
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', 'search.php?query=' + encodeURIComponent(query), true);
+                xhr.onload = function() {
+                    if (this.status === 200) {
+                        document.getElementById('result').innerHTML = this.responseText;
+                    }
+                };
+                xhr.send();
+            } else {
+                document.getElementById('result').innerHTML = '';
+            }
+        }
+    </script>
+</body>
+</html>
